@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoTable from './components/TodoTable';
+
+const todoList =[{rowNo:1, description:"water plants", assignedTo:"User 1"},
+  {rowNo:2, description:"take dog out", assignedTo:"User 2"},
+  {rowNo:3, description:"get haircut", assignedTo:"User 1"}
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mt-5 container">
+      <div className="card">
+      <div className="card-header">
+       Your todo's
+      </div>
+      <div className="card-body">
+       <TodoTable todoList = {todoList}/>
+      </div>
+      </div>
     </div>
   );
 }
