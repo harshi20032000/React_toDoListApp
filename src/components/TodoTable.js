@@ -10,20 +10,13 @@ function TodoTable(props) {
             </tr>
         </thead>
         <tbody>
-            <TodoRowItem
-                rowNo={props.todoList[0].rowNo}
-                description={props.todoList[0].description}
-                assignedTo={props.todoList[0].assignedTo} />
+            {props.todoList.map(eachTodoRow =>(
+                <TodoRowItem
+                rowNo={eachTodoRow.rowNo}
+                description={eachTodoRow.description}
+                assignedTo={eachTodoRow.assignedTo} />
 
-            <TodoRowItem
-                rowNo={props.todoList[1].rowNo}
-                description={props.todoList[1].description}
-                assignedTo={props.todoList[1].assignedTo} />
-
-            <TodoRowItem
-                rowNo={props.todoList[2].rowNo}
-                description={props.todoList[2].description}
-                assignedTo={props.todoList[2].assignedTo} />
+            ))}
 
         </tbody>
     </table>
